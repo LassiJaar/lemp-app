@@ -14,7 +14,7 @@ DB_NAME = os.getenv('DB_NAME', 'appdb')
 def health():
     return jsonify(message={'status': 'ok'})
 
-@app.get('/cicd/api/time/')
+@app.get('/api/time/')
 def time():
     # Placeholder for actual time fetching logic
     #get server time from db
@@ -30,7 +30,7 @@ def time():
     cur.close(); conn.close()
     return jsonify(message=row[0])
 
-@app.get('/cicd/api/')
+@app.get('/api/')
 def index():
     """Simple endpoint that greets from DB."""
     conn = mysql.connector.connect(
